@@ -1,0 +1,62 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="fractal">
+        <div id="controlBox1"></div>
+        <div id="controlBox2"></div>
+        <div id="sliders">
+            <p1 id="timesText">Speed:</p1>
+            <input type="range" id="times" min="0" max="1000" value="100" oninput="saveTimes()">
+            <p1 id="timesNum"></p1>
+            <br>
+            <p1 id="qualityText">Quality:</p1>
+            <input type="range" id="quality" min="1" max="10" value="1" oninput="saveQuality()">
+            <p1 id="qualityNum"></p1>
+            <br>
+            <p1 id="layersText">Strings:</p1>
+            <input type="range" id="layers" min="1" max="1000" value="7" oninput="saveLayers()">
+            <p1 id="layersNum"></p1>
+            <br>
+            <p1 id="lengthText">Length:</p1>
+            <input type="range" id="length" min="1" max="1000000" value="123456" oninput="saveLength()">
+            <p1 id="lengthNum"></p1>
+            <button id="reset" onclick="resetScreen()">Reset</button>
+            <button id="generate" onclick="generate()">Generate</button>
+            <button id="test" onclick="test()">Test</button>            
+            <input id="backround" oninput="saveBackround()" placeholder="Background (if wanted)"></input>
+            <p1 id="picText">Picture mode:<p1>
+            <input type="checkbox" id="pic" onclick="savePic()"></input>
+            <p1 id="centerText">Center:<p1>
+            <input type="checkbox" id="center" onclick="saveCenter()"></input>
+            <p1 id="clickModeText">Click mode:<p1>
+            <input type="checkbox" id="clickMode" onclick="saveClickMode()" checked></input>
+            <p1 id="staticText">Static:</p1>
+            <input type="checkbox" id="static" onclick="saveStatic()"></input>
+            <p1 id="stringResetText">String reset:</p1>
+            <input type="checkbox" id="stringReset" onclick="saveStringReset()" checked></input>
+            <p1 id="outsideText">Outside:</p1>
+            <input type="checkbox" id="outside" onclick="saveOutside()"></input>
+        </div>
+        <canvas id="canvas" width="1200" height="675" onclick="addStringClickAtMouse(event)" onmousemove="addStringMoveAtMouse(event)"></canvas>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
